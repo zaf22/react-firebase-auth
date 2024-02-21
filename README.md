@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Install Node.js
+
+If you havent already, install Node.js. Download instructions can be found [here](https://nodejs.org/en/download).
+
+## Firebase Commands
+To run firebase correctly, use the following commands in the project directory:
+
+### `firebase login`
+
+This allows you to login to google firebase.
+
 ## Available Scripts
 
 In the project directory, you can run:

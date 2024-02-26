@@ -9,6 +9,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LoginPage from './pages/LoginPage';
 import Home from './pages/Home';
+import AddItem from './components/database/AddItem';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />
+  },
+  {
+    path: "/addItem",
+    element: <AddItem />
   }
 ]);
 

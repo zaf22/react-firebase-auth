@@ -12,9 +12,10 @@ const Home = () => {
   
   const [itemList, setItemList] = useState([]);
 
-  const itemsCollectionRef = collection(db, "items");
+  
 
   useEffect(() => {
+    const itemsCollectionRef = collection(db, "items");
     const getList = async () => {
       try{
         const data = await getDocs(itemsCollectionRef);

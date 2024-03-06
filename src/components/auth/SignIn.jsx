@@ -37,8 +37,12 @@ const SignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}>
             </Form.Control>
             <Button variant='primary' type='submit'>Log In</Button>
+        </Form>
+    </Container>
+  )
+}
 
-            /* Shashwat's code 
+/* Shashwat's code (inside the form)
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email"
@@ -65,9 +69,5 @@ const SignIn = () => {
             </Button>
 
             */
-        </Form>
-    </Container>
-  )
-}
 
 export default SignIn

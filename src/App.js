@@ -1,11 +1,12 @@
-import './App.css';
+import React from 'react';
+import Container from 'react-bootstrap/Container';
 import AuthDetails from './components/auth/AuthDetails';
 
 function App() {
   return (
-    <div className="App">
+    <Container style={{textAlign:'center'}} className='mt-3'>
       <AuthDetails />
-    </div>
+    </Container>
   );
 }
 

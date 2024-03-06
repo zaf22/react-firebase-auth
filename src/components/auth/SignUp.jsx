@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, {useState} from 'react'
 import { auth } from "../../firebase";
+import { Button, Container, Form } from 'react-bootstrap';
 
 
 const SignUp = () => {
@@ -20,23 +21,23 @@ const SignUp = () => {
     }
 
   return (
-    <div classname='sign-up-container'>
-        <form onSubmit={signUp}>
+    <Container style={{textAlign:'center', display: 'flex',  justifyContent:'center'}}>
+        <Form onSubmit={signUp}>
             <h1>Create Account!</h1>
 
-            <input type='email' placeholder='email@email.com' 
+            <Form.Control type='email' placeholder='email@email.com' 
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)}>     
-            </input>
+            </Form.Control>
 
-            <input type='password' placeholder='password' 
+            <Form.Control type='password' placeholder='password' 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}>
-            </input>
+            </Form.Control>
 
-            <button type='submit'>Sign Up</button>
-        </form>
-    </div>
+            <Button type='submit'>Sign Up</Button>
+        </Form>
+    </Container>
   )
 }
 

@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import LoginPage from './pages/LoginPage';
 import Home from './pages/Home';
 import AddItem from './components/database/AddItem';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   {

@@ -1,13 +1,14 @@
 import React from 'react'
 import SignIn from '../components/auth/SignIn'
 import SignUp from '../components/auth/SignUp'
+import { Container } from 'react-bootstrap';
 
 const LoginPage = () => {
   return (
-    <div>
+    <Container>
       <SignIn></SignIn>
       <SignUp></SignUp>
-    </div>
+    </Container>
   )
 }
 export default LoginPage

@@ -3,6 +3,7 @@ import AuthDetails from '../components/auth/AuthDetails'
 import { useNavigate } from 'react-router-dom';
 import {db} from '../firebase';
 import { getDocs, collection } from 'firebase/firestore';
+import { Button, Container, Table } from 'react-bootstrap';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -30,19 +31,29 @@ const Home = () => {
   }, []);
     
   return (
-    <div>Main Menu
-        <AuthDetails></AuthDetails>
-        <button onClick={userAdd}>Add Item</button>
-        <div>
-          {itemList.map((item) => (
-            <div>
-              <h2>{item.name}</h2>
-              <p>Cost: {item.cost}</p>
-              <p>Quantity: {item.quantity}</p>
-            </div>
-          ))}
+    <Container>
+        <h1 style={{textAlign:'center'}} className='mt-3'>Main Menu</h1>
+        <div className='position-absolute top-0 end-0'>
+          <AuthDetails></AuthDetails>
         </div>
-    </div>
+        <Button onClick={userAdd}>Add Item</Button>
+        <Table striped bordered hover responsive className='mt-5'>
+          <thead>
+            <th>qty</th>
+            <th>Item Name</th>
+            <th>Cost (USD)</th>
+          </thead>
+          <tbody>
+          {itemList.map((item) => (
+            <tr>
+              <td>{item.quantity}</td>
+              <td>{item.name}</td>
+              <td>{item.cost}</td>
+            </tr>
+          ))}
+          </tbody>
+        </Table>
+    </Container>
   )
 }
 

@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, {useState} from 'react'
 import { auth } from "../../firebase";
 import { useNavigate } from 'react-router-dom';
+import { Button, Container, Form } from 'react-bootstrap';
 
 
 const SignIn = () => {
@@ -24,22 +25,21 @@ const SignIn = () => {
     }
 
   return (
-    <div classname='sign-in-container'>
-        <form onSubmit={signIn}>
+    <Container style={{textAlign:'center', display:'flex', justifyContent:'center'}}>
+        <Form onSubmit={signIn}>
             <h1>Log in!</h1>
-
-            <input type='email' placeholder='email@email.com' 
+            <Form.Control type='email' placeholder='email@email.com' 
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)}>     
-            </input>
+            </Form.Control>
 
-            <input type='password' placeholder='password' 
+            <Form.Control type='password' placeholder='password' 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}>
-            </input>
-            <button type='submit'>Log In</button>
-        </form>
-    </div>
+            </Form.Control>
+            <Button variant='primary' type='submit'>Log In</Button>
+        </Form>
+    </Container>
   )
 }
 

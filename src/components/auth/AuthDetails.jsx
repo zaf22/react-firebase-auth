@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {onAuthStateChanged, signOut } from 'firebase/auth';
 import {auth} from '../../firebase'
 import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 
 
 const AuthDetails = () => {
@@ -32,7 +34,12 @@ const AuthDetails = () => {
         navigate("/login");
     }
   return (
-    <div>{authUser ? <><p>{`Signed In as ${authUser.email}`}</p><button onClick={userSignOut}>Sign Out</button></> : <button onClick={userSignIn}>Sign In</button>}</div>
+    <Container>
+        {authUser ? <div className='mt-3'>
+            <p>{`Signed In as ${authUser.email}`}</p>
+            <Button onClick={userSignOut}>Sign Out</Button></div> 
+        : <Button onClick={userSignIn}>Sign In</Button>}
+    </Container>
   )
 }
 

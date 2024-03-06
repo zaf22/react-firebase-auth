@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { db } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 import { addDoc, collection } from 'firebase/firestore';
+import { Container, Form, Button } from 'react-bootstrap';
 
 const AddItem = () => {
     const [name, setName] = useState("");
@@ -30,24 +31,24 @@ const AddItem = () => {
         
     }
   return (
-    <div>  
-        <h1>Add Item</h1>
-        <input type='text' placeholder='Item Name' 
+    <Container>  
+        <h1 style={{textAlign:'center'}} className='mt-3'>Add Item</h1>
+        <Form.Control type='text' placeholder='Item Name' 
             value={name} 
             onChange={(e) => setName(e.target.value)}>     
-        </input>
+        </Form.Control>
 
-        <input type='number' placeholder='Cost (USD)' 
+        <Form.Control type='number' placeholder='Cost (USD)' 
             value={cost}
             onChange={(e) => setCost(Number(e.target.value))}>
-        </input>
+        </Form.Control>
 
-        <input type='number' placeholder='Quantity' 
+        <Form.Control type='number' placeholder='Quantity' 
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}>
-        </input>
-        <button onClick={addItem}>Add Item</button>
-    </div>
+        </Form.Control>
+        <Button onClick={addItem}>Add Item</Button>
+    </Container>
   )
 }
 
